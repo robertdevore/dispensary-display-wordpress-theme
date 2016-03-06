@@ -104,7 +104,7 @@ add_action( 'after_setup_theme', 'wp_dispensary_content_width', 0 );
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
+ */	
 function wp_dispensary_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'wp-dispensary' ),
@@ -115,6 +115,9 @@ function wp_dispensary_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+if( class_exists( 'WP_Dispensary' ) ) {
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar Flowers', 'wp-dispensary' ),
 		'id'            => 'sidebar-flowers',
@@ -151,6 +154,9 @@ function wp_dispensary_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+}
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer row #1', 'wp-dispensary' ),
 		'id'            => 'footer-1',
@@ -198,13 +204,13 @@ function wp_dispensary_scripts() {
 	wp_enqueue_style( 'wp-dispensary-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'wp-dispensary-style', get_template_directory_uri() . '/css/wp-dispensary.css' );
 	wp_enqueue_style( 'wp-dispensary-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900,300italic,400italic,700italic' );
-	wp_enqueue_style( 'wp-dispensary-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'wp-dispensary-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
 
-	wp_enqueue_script( 'wp-dispensary-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151009', true );
-	wp_enqueue_script( 'wp-dispensary-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151009', true );
-	wp_enqueue_script( 'wp-dispensary-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20151009', true );
-	wp_enqueue_script( 'wp-dispensary-hoverIntent', get_template_directory_uri() . '/js/hoverIntent.min.js', array(), '20151009', true );
-	wp_enqueue_script( 'wp-dispensary-js', get_template_directory_uri() . '/js/wp-dispensary.js', array(), '20151009', true );
+	wp_enqueue_script( 'wp-dispensary-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20160307', true );
+	wp_enqueue_script( 'wp-dispensary-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160307', true );
+	wp_enqueue_script( 'wp-dispensary-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20160307', true );
+	wp_enqueue_script( 'wp-dispensary-hoverIntent', get_template_directory_uri() . '/js/hoverIntent.min.js', array(), '20160307', true );
+	wp_enqueue_script( 'wp-dispensary-js', get_template_directory_uri() . '/js/wp-dispensary.js', array(), '20160307', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

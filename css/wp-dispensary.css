@@ -832,6 +832,7 @@ span.caption.text-muted {
 .attachment-large-image {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+	width: 100%;
 }
 
 /* Blockquotes */

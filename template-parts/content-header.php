@@ -70,10 +70,16 @@
 	
 	<div class="row site-intro">
 		<div class="col-lg-12">
-			<h2 class="intro-title"><?php single_post_title(); ?></h2>
-			<?php if ( function_exists( 'the_subtitle' ) ) {
-				the_subtitle( '<span class="intro-sub">', '</span>' );
-			} ?>
+			<?php if (get_theme_mod('wpd_home_title') !='') { ?>
+			<h2 class="intro-title"><?php echo get_theme_mod( 'wpd_home_title' ); ?></h2>
+			<?php } else { ?>
+			<h2 class="intro-title"><?php esc_html_e( 'Build your marijuana dispensary business website with ease', 'wp-dispensary' ); ?></h2>
+			<?php } ?>
+			<?php if (get_theme_mod('wpd_home_subtitle') !='') { ?>
+			<span class="intro-sub"><?php echo get_theme_mod( 'wpd_home_subtitle' ); ?></span>
+			<?php } else { ?>
+			<span class="intro-sub"><?php esc_html_e( 'With WP Dispensary, it\'s never been easier to launch your menu', 'wp-dispensary' ); ?></span>
+			<?php } ?>
 		</div><!-- .col-lg-12 -->
 	</div><!-- .row -->
 	<div class="site-header-bg" style="background-image: url(<?php echo $feat_image; ?>);"></div>
