@@ -28,7 +28,7 @@ Dispensary Display includes support for the [WP Dispensary](http://www.wpdispens
 
 == Changelog ==
 
-= 1.0 - 03/07/2016 =
+= 1.0 =
 * Initial release
 
 == Credits ==

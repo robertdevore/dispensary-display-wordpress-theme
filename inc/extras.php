@@ -40,13 +40,14 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 /** 
- * Add "Subtitles" plugin suppor for Custom Post Types
+ * Add "Subtitles" plugin support for Custom Post Types
  */
 function wpdispensary_add_subtitles_support() {
     add_post_type_support( 'flowers', 'subtitles' );
     add_post_type_support( 'edibles', 'subtitles' );
     add_post_type_support( 'concentrates', 'subtitles' );
     add_post_type_support( 'prerolls', 'subtitles' );
+    add_post_type_support( 'topicals', 'subtitles' );
 }
 add_action( 'init', 'wpdispensary_add_subtitles_support' );
 
@@ -79,10 +80,10 @@ function wp_dispensary_register_required_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'Leafly Reviews',
-			'slug'      => 'leafly-reviews',
+			'name'      => 'WP Dispensary',
+			'slug'      => 'wp-dispensary',
 			'required'  => false,
-		),
+		)
 
 	);
 
