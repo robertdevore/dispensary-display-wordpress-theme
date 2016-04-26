@@ -204,7 +204,7 @@ function wp_dispensary_scripts() {
 	wp_enqueue_style( 'wp-dispensary-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'wp-dispensary-style', get_template_directory_uri() . '/css/wp-dispensary.css' );
 	wp_enqueue_style( 'wp-dispensary-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900,300italic,400italic,700italic' );
-	wp_enqueue_style( 'wp-dispensary-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'wp-dispensary-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' );
 
 	wp_enqueue_script( 'wp-dispensary-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20160307', true );
 	wp_enqueue_script( 'wp-dispensary-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160307', true );
