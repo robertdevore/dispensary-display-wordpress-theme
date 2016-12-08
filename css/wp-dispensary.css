@@ -458,18 +458,18 @@ span.menu-close {
 	.site-header {
 		padding-top: 0;
 	}
-	
+
 	.site-branding {
 		text-align: center;
 		width: 100%;
 	}
-	
+
 	.menu-toggle {
 		display: inline-block;
 		z-index: 15;
 		position: relative;
 	}
-	
+
 	.menu-toggle:hover {
 		cursor: pointer;
 	}
@@ -884,6 +884,7 @@ body.post-type-archive-edibles .hentry,
 body.post-type-archive-concentrates .hentry,
 body.post-type-archive-prerolls .hentry,
 body.post-type-archive-topicals .hentry,
+body.post-type-archive-growers .hentry,
 body.tax-flowers_category .hentry,
 body.tax-edibles_category .hentry,
 body.tax-concentrates_category .hentry,
@@ -909,6 +910,8 @@ body.post-type-archive-prerolls .hentry .entry-header,
 body.post-type-archive-prerolls .hentry .entry-footer,
 body.post-type-archive-topicals .hentry .entry-header,
 body.post-type-archive-topicals .hentry .entry-footer,
+body.post-type-archive-growers .hentry .entry-header,
+body.post-type-archive-growers .hentry .entry-footer,
 body.tax-flowers_category .hentry .entry-header,
 body.tax-flowers_category .hentry .entry-footer,
 body.tax-edibles_category .hentry .entry-header,
@@ -937,6 +940,7 @@ body.post-type-archive-edibles .hentry .entry-header h2.entry-title,
 body.post-type-archive-concentrates .hentry .entry-header h2.entry-title,
 body.post-type-archive-topicals .hentry .entry-header h2.entry-title,
 body.post-type-archive-prerolls .hentry .entry-header h2.entry-title,
+body.post-type-archive-growers .hentry .entry-header h2.entry-title,
 body.tax-flowers_category .hentry .entry-header h2.entry-title,
 body.tax-edibles_category .hentry .entry-header h2.entry-title,
 body.tax-concentrates_category .hentry .entry-header h2.entry-title,
@@ -956,6 +960,7 @@ body.post-type-archive-edibles nav.navigation.posts-navigation,
 body.post-type-archive-concentrates nav.navigation.posts-navigation,
 body.post-type-archive-topicals nav.navigation.posts-navigation,
 body.post-type-archive-prerolls nav.navigation.posts-navigation,
+body.post-type-archive-growers nav.navigation.posts-navigation,
 body.tax-flowers_category nav.navigation.posts-navigation,
 body.tax-edibles_category nav.navigation.posts-navigation,
 body.tax-concentrates_category nav.navigation.posts-navigation,
@@ -981,11 +986,11 @@ body.tax-ingredients nav.navigation.posts-navigation {
 
 .dispensary-category a,
 .dispensary-category a:visited {
-    background: #EEE;
-    border-radius: 15px;
-    color: #AAA;
+  background: #EEE;
+  border-radius: 15px;
+  color: #AAA;
 	display: inline-block;
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 .dispensary-category a:hover {
@@ -1406,30 +1411,30 @@ ol.comment-list ol.children li:last-child {
 	.intro-title {
 		font-size: 32px;
 	}
-	
+
 	span.intro-sub {
 		font-size: 16px;
 	}
-	
+
 	.site-intro a.button {
 		display: block;
 		margin: 6px 12px;
 	}
-	
+
 	span.tags-links {
 		display: none;
 	}
-	
+
 	h1.entry-title,
 	h2.entry-title {
 		font-size: 40px;
 	}
-	
+
 	.entry-header,
 	.entry-content,
 	.entry-footer,
 	.comments {
 		padding: 24px;
 	}
-	
+
 }
