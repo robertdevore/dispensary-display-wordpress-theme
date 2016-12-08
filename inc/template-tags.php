@@ -8,66 +8,75 @@
  */
 
 if ( ! function_exists( 'wp_dispensary_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function wp_dispensary_posted_on() {
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function wp_dispensary_posted_on() {
 
-	if ( 'post' === get_post_type() ) {
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link"><i class="fa fa-comment"></i> ';
-			comments_popup_link( esc_html__( 'Leave a comment', 'wp-dispensary' ), esc_html__( '1 Comment', 'wp-dispensary' ), esc_html__( '% Comments', 'wp-dispensary' ) );
-			echo '</span>';
+		if ( 'post' === get_post_type() ) {
+			if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+				echo '<span class="comments-link"><i class="fa fa-comment"></i> ';
+				comments_popup_link( esc_html__( 'Leave a comment', 'wp-dispensary' ), esc_html__( '1 Comment', 'wp-dispensary' ), esc_html__( '% Comments', 'wp-dispensary' ) );
+				echo '</span>';
+			}
 		}
-	}
-	
-	if ( is_post_type_archive( array( 'prerolls', 'edibles' ) ) ) {
-		
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_priceeach', true);
-		}
-		
-	}
-	
-	if ( is_post_type_archive( array( 'flowers', 'concentrates' ) ) ) {
-		
-		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_halfgram', true);
-		} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_gram', true);
-		} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_eighth', true);
-		} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_quarter', true);
-		} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_halfounce', true);
-		}
-		echo " - ";
-		if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_ounce', true);
-		} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_halfounce', true);
-		} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_quarter', true);
-		} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_eighth', true);
-		} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			echo "$" . get_post_meta(get_the_id(), '_gram', true);
-		}
-		
-	}
 
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'wp-dispensary' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link"><i class="fa fa-pencil"></i> ',
-		'</span>'
-	);
+		if ( is_post_type_archive( array( 'prerolls', 'edibles' ) ) ) {
+			if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_priceeach', true);
+			}
+		}
 
-}
+		if ( is_post_type_archive( array( 'growers' ) ) ) {
+			if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
+				echo '<strong>Clones</strong> '. get_post_meta(get_the_id(), '_clonecount', true);
+			}
+			if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
+				echo '<strong>Seeds</strong> '. get_post_meta(get_the_id(), '_seedcount', true);
+			}
+			echo ' - ';
+			if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
+				echo '<strong>Price:</strong> $' . get_post_meta(get_the_id(), '_priceeach', true);
+			}
+		}
+
+		if ( is_post_type_archive( array( 'flowers', 'concentrates' ) ) ) {
+			if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_halfgram', true);
+			} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_gram', true);
+			} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_eighth', true);
+			} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_quarter', true);
+			} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_halfounce', true);
+			}
+			echo " - ";
+			if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_ounce', true);
+			} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_halfounce', true);
+			} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_quarter', true);
+			} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_eighth', true);
+			} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+				echo '$' . get_post_meta(get_the_id(), '_gram', true);
+			}
+		}
+
+		edit_post_link(
+			sprintf(
+				/* translators: %s: Name of current post */
+				esc_html__( 'Edit %s', 'wp-dispensary' ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			),
+			'<span class="edit-link"><i class="fa fa-pencil"></i> ',
+			'</span>'
+		);
+
+	}
 endif;
 
 if ( ! function_exists( 'wp_dispensary_entry_footer' ) ) :
@@ -77,7 +86,7 @@ if ( ! function_exists( 'wp_dispensary_entry_footer' ) ) :
 function wp_dispensary_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
-		
+
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -110,9 +119,14 @@ function wp_dispensary_entry_footer() {
 		} elseif ( 'edibles' === get_post_type() ) {
 			echo "<span class='dispensary-category'>" .get_the_term_list( $post->ID, 'edibles_category', '', ' ', '' ) . "</span>";
 		} elseif ( 'prerolls' === get_post_type() ) {
-			$prerollflower = get_post_meta(get_the_id(), '_selected_flowers', true); 
+			$prerollflower = get_post_meta(get_the_id(), '_selected_flowers', true);
 			echo "<span class='dispensary-category'>";
 			echo "<a href='". get_permalink($prerollflower) ."'>". get_the_title($prerollflower) ."</a>";
+			echo "</span>";
+		} elseif ( 'growers' === get_post_type() ) {
+			$growersflower = get_post_meta(get_the_id(), '_selected_flowers', true);
+			echo "<span class='dispensary-category'>";
+			echo "<a href='". get_permalink( $growersflower ) ."'>". get_the_title( $growersflower ) ."</a>";
 			echo "</span>";
 		} elseif ( 'flowers' === get_post_type() ) {
 			echo "<span class='dispensary-category'>" .get_the_term_list( $post->ID, 'flowers_category', '', ' ', '' ) . "</span>";
