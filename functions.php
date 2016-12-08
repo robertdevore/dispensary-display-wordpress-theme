@@ -155,6 +155,15 @@ if( class_exists( 'WP_Dispensary' ) ) {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Topicals', 'wp-dispensary' ),
+		'id'            => 'sidebar-topicals',
+		'description'   => 'Widgets that display on all topical posts',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar Growers', 'wp-dispensary' ),
 		'id'            => 'sidebar-growers',
 		'description'   => 'Widgets that display on all growers posts',
