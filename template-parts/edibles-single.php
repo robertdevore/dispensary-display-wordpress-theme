@@ -11,12 +11,7 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		
-		<div class="ingredientlist">
-			<strong>Ingredients</strong>
-			<?php echo get_the_term_list( $post->ID, 'ingredients', '<span>', ', ', '</span>' ); ?>
-		</div><!-- /.ingredientlist -->
-		
+
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-dispensary' ),
@@ -43,4 +38,3 @@
 		<?php wp_dispensary_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-
